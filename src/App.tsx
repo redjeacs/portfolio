@@ -3,16 +3,21 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import Contacts from "./components/Contacts";
 import Navigation from "./components/Navigation";
+import { useTheme } from "./contexts/ThemeContext";
 
 function App() {
+  const { theme } = useTheme();
+
   return (
-    <main>
-      <Navigation />
-      <Hero />
-      <About />
-      <Skills />
-      <Contacts />
-    </main>
+    <>
+      <main style={theme}>
+        <Navigation />
+        <Hero />
+        <About />
+        <Skills />
+        <Contacts />
+      </main>
+    </>
   );
 }
 
