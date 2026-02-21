@@ -4,10 +4,10 @@ function Navigation() {
   const { setTheme } = useTheme();
 
   return (
-    <div className="">
+    <nav className="fixed top-0 left-0 w-full flex justify-center gap-4 p-4">
       <button onClick={() => setTheme(lightTheme)}>light</button>
       <button onClick={() => setTheme(darkTheme)}>dark</button>
-    </div>
+    </nav>
   );
 }
 

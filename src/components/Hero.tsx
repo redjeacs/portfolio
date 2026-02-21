@@ -1,5 +1,5 @@
 function Hero() {
-  return <div className="">Hero</div>;
+  return <div className="min-h-screen">Hero</div>;
 }
 
 export default Hero;
