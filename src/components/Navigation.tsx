@@ -1,12 +1,10 @@
-import { darkTheme, lightTheme, useTheme } from "../contexts/ThemeContext";
+import { setTheme } from "../contexts/useThemeStore";
 
 function Navigation() {
-  const { setTheme } = useTheme();
-
   return (
     <nav className="fixed top-0 left-0 w-full flex justify-center gap-4 p-4">
-      <button onClick={() => setTheme(lightTheme)}>light</button>
-      <button onClick={() => setTheme(darkTheme)}>dark</button>
+      <button onClick={() => setTheme("light")}>light</button>
+      <button onClick={() => setTheme("dark")}>dark</button>
     </nav>
   );
 }
