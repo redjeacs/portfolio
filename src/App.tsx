@@ -7,7 +7,7 @@ import Navigation from "./components/Navigation";
 function App() {
   return (
     <>
-      <main>
+      <main className="p-2">
         <Navigation />
         <Hero />
         <About />

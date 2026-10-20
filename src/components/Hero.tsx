@@ -1,7 +1,10 @@
 function Hero() {
   return (
-    <div className="min-h-screen flex justify-center items-center">
-      Jerry Chang
+    <div
+      id="hero"
+      className="min-h-screen flex justify-center items-center text-4xl font-bold"
+    >
+      Welcome to My Portfolio
     </div>
   );
 }
