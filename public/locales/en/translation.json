@@ -1,1 +1,8 @@
-{ "nav": {} }
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "contacts": "Contacts"
+  }
+}

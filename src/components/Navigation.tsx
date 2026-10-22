@@ -4,9 +4,18 @@ import { Sun, Moon } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 function Navigation() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(true);
   const previousScrollPosition = useRef(0);
+
+  const changeLanguage = (lng: string) => {
+    // Check safety catch to avoid runtime crashes
+    if (i18n && typeof i18n.changeLanguage === "function") {
+      i18n.changeLanguage(lng);
+    } else {
+      console.error("i18n instance is not fully loaded yet.");
+    }
+  };
 
   const theme = useThemeStore((state) => state.theme);
   const toggleTheme = useThemeStore((state) => state.toggleTheme);
@@ -56,29 +65,40 @@ function Navigation() {
           <Moon className="h-2 w-2 fill-inherit" />
         )}
       </button>
+      <div className="lang-switcher">
+        <button className="cursor-pointer" onClick={() => changeLanguage("en")}>
+          EN
+        </button>
+        <button
+          className="cursor-pointer"
+          onClick={() => changeLanguage("zh-TW")}
+        >
+          繁體中文
+        </button>
+      </div>
       <button
         className="cursor-pointer"
         onClick={() => scrollToSection("hero")}
       >
-        Home
+        {t("nav.home")}
       </button>
       <button
         className="cursor-pointer"
         onClick={() => scrollToSection("about")}
       >
-        About
+        {t("nav.about")}
       </button>
       <button
         className="cursor-pointer"
         onClick={() => scrollToSection("skills")}
       >
-        Skills
+        {t("nav.skills")}
       </button>
       <button
         className="cursor-pointer"
         onClick={() => scrollToSection("contacts")}
       >
-        Contacts
+        {t("nav.contacts")}
       </button>
     </nav>
   );
