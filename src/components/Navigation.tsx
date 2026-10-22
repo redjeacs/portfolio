@@ -1,8 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import useThemeStore from "../contexts/useThemeStore";
 import { Sun, Moon } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 function Navigation() {
+  const { t } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(true);
   const previousScrollPosition = useRef(0);
 
@@ -44,7 +46,7 @@ function Navigation() {
       }`}
     >
       <button
-        className="fixed right-0 bottom-0 cursor-pointer p-2 rounded-full transition-colors duration-200"
+        className="fixed right-0 sm:top-0 sm:bottom-auto bottom-0 cursor-pointer p-2 rounded-full transition-colors duration-200"
         onClick={toggleTheme}
         aria-label="Toggle theme"
       >
