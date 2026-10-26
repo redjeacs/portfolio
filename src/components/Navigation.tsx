@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import useThemeStore from "../contexts/useThemeStore";
 import { Sun, Moon } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { Dropdown } from "../utils/Dropdown";
 
 function Navigation() {
   const { t, i18n } = useTranslation();
@@ -9,7 +10,6 @@ function Navigation() {
   const previousScrollPosition = useRef(0);
 
   const changeLanguage = (lng: string) => {
-    // Check safety catch to avoid runtime crashes
     if (i18n && typeof i18n.changeLanguage === "function") {
       i18n.changeLanguage(lng);
     } else {
@@ -21,16 +21,14 @@ function Navigation() {
   const toggleTheme = useThemeStore((state) => state.toggleTheme);
 
   useEffect(() => {
+    // Interactive Navbar Tracking
     const handleScroll = () => {
       const currentScrollPosition = window.scrollY;
       if (currentScrollPosition === 0) {
-        // At the top of the page
         setIsScrolled(true);
       } else if (currentScrollPosition > previousScrollPosition.current) {
-        // Scrolling down
         setIsScrolled(false);
       } else {
-        // Scrolling up
         setIsScrolled(true);
       }
 
@@ -42,6 +40,7 @@ function Navigation() {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
+    // Toggle Page Anchors
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -54,28 +53,39 @@ function Navigation() {
         isScrolled ? "opacity-100" : "opacity-0"
       }`}
     >
-      <button
-        className="fixed right-0 sm:top-0 sm:bottom-auto bottom-0 cursor-pointer p-2 rounded-full transition-colors duration-200"
-        onClick={toggleTheme}
-        aria-label="Toggle theme"
+      <div
+        id="corner-utils"
+        className="fixed right-0 sm:top-0 sm:bottom-auto bottom-0"
       >
-        {theme === "dark" ? (
-          <Sun className="h-2 w-2 fill-inherit" />
-        ) : (
-          <Moon className="h-2 w-2 fill-inherit" />
-        )}
-      </button>
-      <div className="lang-switcher">
-        <button className="cursor-pointer" onClick={() => changeLanguage("en")}>
-          EN
-        </button>
+        {/* Language Picker */}
+        <Dropdown>
+          <button
+            className="cursor-pointer"
+            onClick={() => changeLanguage("en")}
+          >
+            EN
+          </button>
+          <button
+            className="cursor-pointer"
+            onClick={() => changeLanguage("zh-TW")}
+          >
+            繁體中文
+          </button>
+        </Dropdown>
+        {/* Theme Button */}
         <button
-          className="cursor-pointer"
-          onClick={() => changeLanguage("zh-TW")}
+          className="cursor-pointer p-2 rounded-full transition-colors duration-200"
+          onClick={toggleTheme}
+          aria-label="Toggle theme"
         >
-          繁體中文
+          {theme === "dark" ? (
+            <Sun className="h-2 w-2 fill-inherit" />
+          ) : (
+            <Moon className="h-2 w-2 fill-inherit" />
+          )}
         </button>
       </div>
+
       <button
         className="cursor-pointer"
         onClick={() => scrollToSection("hero")}
