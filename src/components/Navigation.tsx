@@ -48,25 +48,52 @@ function Navigation() {
   };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 w-full flex justify-center gap-4 p-4 transition-opacity duration-300 bg-(--nav-bg) ${
-        isScrolled ? "opacity-100" : "opacity-0"
-      }`}
-    >
+    <>
+      <nav
+        className={`fixed top-0 left-0 w-full flex justify-center gap-4 p-4 transition-transform duration-300 bg-(--nav-bg) ${
+          isScrolled ? "translate-y-0" : "-translate-y-full"
+        }`}
+      >
+        <button
+          className="cursor-pointer text-xs sm:text-base whitespace-nowrap min-w-0 tracking-wide"
+          onClick={() => scrollToSection("hero")}
+        >
+          {t("nav.home")}
+        </button>
+        <button
+          className="cursor-pointer text-xs sm:text-base whitespace-nowrap min-w-0 tracking-wide"
+          onClick={() => scrollToSection("about")}
+        >
+          {t("nav.about")}
+        </button>
+        <button
+          className="cursor-pointer text-xs sm:text-base whitespace-nowrap min-w-0 tracking-wide"
+          onClick={() => scrollToSection("skills")}
+        >
+          {t("nav.skills")}
+        </button>
+        <button
+          className="cursor-pointer text-xs sm:text-base whitespace-nowrap min-w-0 tracking-wide"
+          onClick={() => scrollToSection("contacts")}
+        >
+          {t("nav.contacts")}
+        </button>
+      </nav>
       <div
         id="corner-utils"
-        className="fixed right-0 sm:top-0 sm:bottom-auto bottom-0"
+        className={`fixed bottom-0 right-0 sm:top-0 sm:bottom-auto flex items-center transition-transform duration-300 
+          ${isScrolled ? "translate-y-0" : "translate-y-full md:-translate-y-full"}`}
       >
         {/* Language Picker */}
         <Dropdown>
           <button
-            className="cursor-pointer"
+            className="cursor-pointer text-[14px]"
             onClick={() => changeLanguage("en")}
           >
             EN
           </button>
           <button
-            className="cursor-pointer"
+            className="cursor-pointer text-[14px]"
             onClick={() => changeLanguage("zh-TW")}
           >
             繁體中文
@@ -85,32 +112,7 @@ function Navigation() {
           )}
         </button>
       </div>
-
-      <button
-        className="cursor-pointer"
-        onClick={() => scrollToSection("hero")}
-      >
-        {t("nav.home")}
-      </button>
-      <button
-        className="cursor-pointer"
-        onClick={() => scrollToSection("about")}
-      >
-        {t("nav.about")}
-      </button>
-      <button
-        className="cursor-pointer"
-        onClick={() => scrollToSection("skills")}
-      >
-        {t("nav.skills")}
-      </button>
-      <button
-        className="cursor-pointer"
-        onClick={() => scrollToSection("contacts")}
-      >
-        {t("nav.contacts")}
-      </button>
-    </nav>
+    </>
   );
 }
 
