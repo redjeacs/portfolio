@@ -4,5 +4,14 @@
     "about": "關於",
     "skills": "技能",
     "contacts": "聯絡"
+  },
+  "about": {
+    "title": "關於我"
+  },
+  "skills": {
+    "title": "技能"
+  },
+  "contacts": {
+    "title": "聯絡方式"
   }
 }

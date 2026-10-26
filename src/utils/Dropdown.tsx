@@ -4,11 +4,13 @@ import { useTranslation } from "react-i18next";
 interface DropdownProps {
   children: ReactNode;
   label?: string;
+  isScrolled?: boolean;
 }
 
 export const Dropdown = ({
   children,
   label = "Select Language",
+  isScrolled,
 }: DropdownProps) => {
   const { i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
@@ -34,7 +36,7 @@ export const Dropdown = ({
   };
 
   return (
-    <div className="relative inline-block font-sans">
+    <div className="relative inline-block font-sans bg-(--nav-bg)">
       <button
         onClick={toggleDropdown}
         className="flex w-full items-center justify-between rounded-sm border px-1 text-[12px] font-medium shadow-sm transition-all focus:outline-none focus:ring-2"
@@ -57,10 +59,10 @@ export const Dropdown = ({
         </svg>
       </button>
 
-      {isOpen && (
+      {isOpen && isScrolled && (
         <ul
           onClick={handleMenuClick}
-          className="absolute flex flex-col z-15 left-0 w-max max-h-60 rounded-lg border p-1 ring ring-opacity-5 bottom-full mb-1.5 md:bottom-auto md:top-full md:mb-0 md:mt-1.5"
+          className="absolute flex flex-col z-15 bg-(--nav-bg) left-0 w-max max-h-60 rounded-lg border p-1 ring ring-opacity-5 bottom-full mb-1.5 md:bottom-auto md:top-full md:mb-0 md:mt-1.5"
         >
           {children}
         </ul>

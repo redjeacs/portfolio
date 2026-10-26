@@ -85,7 +85,7 @@ function Navigation() {
           ${isScrolled ? "translate-y-0" : "translate-y-full md:-translate-y-full"}`}
       >
         {/* Language Picker */}
-        <Dropdown>
+        <Dropdown isScrolled={isScrolled}>
           <button
             className="cursor-pointer text-[14px]"
             onClick={() => changeLanguage("en")}

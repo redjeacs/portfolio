@@ -1,4 +1,7 @@
+import { useTranslation } from "react-i18next";
+
 function Hero() {
+  const { t } = useTranslation();
   return (
     <div
       id="hero"
