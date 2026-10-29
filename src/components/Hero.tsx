@@ -5,7 +5,7 @@ function Hero() {
   return (
     <div
       id="hero"
-      className="min-h-screen flex justify-center items-center text-4xl font-bold"
+      className="min-h-screen flex justify-center items-center text-xl md:text-3xl font-bold"
     >
       Welcome to My Portfolio
     </div>

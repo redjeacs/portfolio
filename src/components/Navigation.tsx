@@ -90,7 +90,7 @@ function Navigation() {
             className="cursor-pointer text-[14px]"
             onClick={() => changeLanguage("en")}
           >
-            EN
+            English
           </button>
           <button
             className="cursor-pointer text-[14px]"
