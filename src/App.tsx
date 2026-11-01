@@ -3,6 +3,7 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import Contacts from "./components/Contacts";
 import Navigation from "./components/Navigation";
+import Projects from "./components/projects/Projects";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Navigation />
         <Hero />
         <About />
+        <Projects />
         <Skills />
         <Contacts />
       </main>

@@ -19,7 +19,7 @@ html {
 }
 
 :root[data-theme="dark"] {
-  background-color: #111111;
-  color: #ffffff;
-  --nav-bg: #111111;
+  background-color: #1e1e24;
+  color: #e4e4e7;
+  --nav-bg: #1e1e24;
 }
