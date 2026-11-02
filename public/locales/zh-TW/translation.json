@@ -5,6 +5,16 @@
     "skills": "技能",
     "contacts": "聯絡"
   },
+  "projects": {
+    "watchlist": {
+      "title": "金融觀察名單",
+      "description": ""
+    },
+    "social app": {
+      "title": "社交平台",
+      "description": ""
+    }
+  },
   "about": {
     "title": "關於我"
   },

@@ -1,29 +1,32 @@
 import React from "react";
 
 // Define the shape of the project object using an interface
-export interface Project {
+export interface ProjectCopy {
   title: string;
   description: string;
-  imageUrl?: string;
-  tags?: string[];
-  liveUrl?: string;
-  githubUrl?: string;
 }
 
-// Define the component's props interface
 interface ProjectCardProps {
-  project: Project;
+  config: {
+    image: string;
+    tags: string[];
+    github: string;
+    demo: string;
+  };
+  copy: ProjectCopy; // Passed down from t(..., { returnObjects: true })
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
-  const { title, description, imageUrl, tags, liveUrl, githubUrl } = project;
+const ProjectCard: React.FC<ProjectCardProps> = ({ config, copy }) => {
+  if (!copy) return null;
+  const { title, description } = copy;
+  const { image, tags, demo, github } = config;
 
   return (
-    <article className="group max-w-sm w-full bg-white rounded-xl shadow-md overflow-hidden flex flex-col transform transition duration-200 hover:-translate-y-1 hover:shadow-xl">
+    <article className="group max-w-sm w-full max-h-screen bg-white rounded-xl shadow-md overflow-hidden flex flex-col transform transition duration-200 hover:-translate-y-1 hover:shadow-xl">
       {/* Image Container */}
       <div className="w-full h-48 overflow-hidden bg-gray-100">
         <img
-          src={imageUrl || "https://unsplash.com"}
+          src={image || "https://unsplash.com"}
           alt={`${title} preview`}
           className="w-full h-full object-cover transition duration-300 group-hover:scale-105"
         />
@@ -40,7 +43,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         {/* Tech Stack Tags */}
         {tags && tags.length > 0 && (
           <div className="flex flex-wrap gap-2 mb-5">
-            {tags.map((tag, index) => (
+            {config.tags.map((tag, index) => (
               <span
                 key={index}
                 className="bg-gray-100 text-gray-700 text-xs font-medium px-2.5 py-1 rounded-full"
@@ -53,9 +56,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
         {/* Action Buttons */}
         <div className="flex gap-3 mt-auto">
-          {liveUrl && (
+          {demo && (
             <a
-              href={liveUrl}
+              href={demo}
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 text-center py-2 px-4 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition duration-150"
@@ -63,9 +66,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               Live Demo
             </a>
           )}
-          {githubUrl && (
+          {github && (
             <a
-              href={githubUrl}
+              href={github}
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 text-center py-2 px-4 text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 border border-gray-200 rounded-lg transition duration-150"

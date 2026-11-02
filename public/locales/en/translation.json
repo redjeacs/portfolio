@@ -5,6 +5,16 @@
     "skills": "Skills",
     "contacts": "Contacts"
   },
+  "projects": {
+    "watchlist": {
+      "title": "Watchlist",
+      "description": ""
+    },
+    "social app": {
+      "title": "Social App",
+      "description": ""
+    }
+  },
   "about": {
     "title": "About"
   },
