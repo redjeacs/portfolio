@@ -8,7 +8,7 @@
   "projects": {
     "watchlist": {
       "title": "金融觀察名單",
-      "description": ""
+      "description": "這是一個 Next.js 全端應用程式，專為即時追蹤股票走勢和生成精美的股票財務圖與報告而設計。透過React / NextJS 前端和Rechart視覺化圖表與隔離的伺服器端 API 路由處理器相結合，該平台能夠安全且高效地整合複雜的市場統計數據。"
     },
     "social app": {
       "title": "社交平台",

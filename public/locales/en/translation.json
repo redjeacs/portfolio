@@ -8,11 +8,11 @@
   "projects": {
     "watchlist": {
       "title": "Watchlist",
-      "description": ""
+      "description": "A full-stack Next.js application designed to track stocks and analyze financial data using a dual-pipeline AI Analysis Engine combining cloud and local models."
     },
     "social app": {
       "title": "Social App",
-      "description": ""
+      "description": "A modern, real-time social media platform featuring secure authentication, live instant messaging, post feeds, media storage, and relational user networking."
     }
   },
   "about": {

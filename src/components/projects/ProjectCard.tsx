@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import React from "react";
 
 // Define the shape of the project object using an interface
@@ -17,9 +18,14 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ config, copy }) => {
+  const { i18n } = useTranslation();
+
   if (!copy) return null;
+
   const { title, description } = copy;
   const { image, tags, demo, github } = config;
+
+  const isChinese = i18n.language?.startsWith("zh");
 
   return (
     <article className="group max-w-sm w-full max-h-screen bg-white rounded-xl shadow-md overflow-hidden flex flex-col transform transition duration-200 hover:-translate-y-1 hover:shadow-xl">
@@ -34,9 +40,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ config, copy }) => {
 
       {/* Content Body */}
       <div className="p-5 flex flex-col grow">
-        <h3 className="text-xl font-semibold text-gray-900 mb-2">{title}</h3>
+        <h3
+          className={`font-semibold text-gray-900 mb-2 ${isChinese ? "text-lg tracking-normal" : "text-xl tracking-tight"}`}
+        >
+          {title}
+        </h3>
 
-        <p className="text-sm text-gray-600 leading-relaxed mb-4 grow">
+        <p
+          className={`text-gray-600 leading-relaxed mb-4 grow ${isChinese ? "text-xs tracking-normal" : "text-sm tracking-tight"}`}
+        >
           {description}
         </p>
 
