@@ -21,12 +21,12 @@ import {
 } from "react-icons/si";
 import { Brain, LaptopIcon, DatabaseZap } from "lucide-react";
 
-interface SkillsList {
+export interface SkillsList {
   id: string;
   skills: Skill[];
 }
 
-interface Skill {
+export interface Skill {
   id: string;
   icon: ComponentType<{ className?: string }>;
 }
