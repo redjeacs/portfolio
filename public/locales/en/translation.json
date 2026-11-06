@@ -19,7 +19,13 @@
     "title": "About"
   },
   "skills": {
-    "title": "Skills"
+    "title": "Skills",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend & Database",
+      "ai": "AI Engineering & Smart Data",
+      "tools": "Tools & DevOps"
+    }
   },
   "contacts": {
     "title": "Contact Me"

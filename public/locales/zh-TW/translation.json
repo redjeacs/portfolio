@@ -19,7 +19,13 @@
     "title": "關於我"
   },
   "skills": {
-    "title": "技能"
+    "title": "專業技能",
+    "categories": {
+      "frontend": "前端開發",
+      "backend": "後端與資料庫",
+      "ai": "AI 工程與智慧數據",
+      "tools": "開發工具與DevOps"
+    }
   },
   "contacts": {
     "title": "聯絡方式"

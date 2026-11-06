@@ -23,6 +23,7 @@ import { Brain, LaptopIcon, DatabaseZap } from "lucide-react";
 
 export interface SkillsList {
   id: string;
+  translationKey: string;
   skills: Skill[];
 }
 
@@ -34,6 +35,7 @@ export interface Skill {
 export const SkillsConfig: SkillsList[] = [
   {
     id: "Frontend",
+    translationKey: "frontend",
     skills: [
       { id: "HTML", icon: SiHtml5 },
       { id: "CSS", icon: SiCss },
@@ -46,6 +48,7 @@ export const SkillsConfig: SkillsList[] = [
   },
   {
     id: "Backend & Database",
+    translationKey: "backend",
     skills: [
       { id: "Node.js", icon: SiNodedotjs },
       { id: "Express", icon: SiExpress },
@@ -58,6 +61,7 @@ export const SkillsConfig: SkillsList[] = [
   },
   {
     id: "AI Engineering & Smart Data",
+    translationKey: "ai",
     skills: [
       { id: "RAG (Retrieval-Augmented Generation)", icon: Brain },
       { id: "Local AI / LM Studio", icon: LaptopIcon },
@@ -66,6 +70,7 @@ export const SkillsConfig: SkillsList[] = [
   },
   {
     id: "Tools & DevOps",
+    translationKey: "tools",
     skills: [
       { id: "Git", icon: SiGit },
       { id: "GitHub", icon: SiGithub },
