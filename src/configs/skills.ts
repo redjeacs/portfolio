@@ -63,9 +63,9 @@ export const SkillsConfig: SkillsList[] = [
     id: "AI Engineering & Smart Data",
     translationKey: "ai",
     skills: [
-      { id: "RAG (Retrieval-Augmented Generation)", icon: Brain },
-      { id: "Local AI / LM Studio", icon: LaptopIcon },
-      { id: "Vector Databases (Pinecone)", icon: DatabaseZap },
+      { id: "RAG", icon: Brain },
+      { id: "LM Studio", icon: LaptopIcon },
+      { id: "Pinecone Database", icon: DatabaseZap },
     ],
   },
   {
