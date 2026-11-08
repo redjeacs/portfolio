@@ -6,7 +6,10 @@ export default function Skills() {
   const { t } = useTranslation();
 
   return (
-    <section id="skills" className="p-8 max-w-6xl mx-auto">
+    <section
+      id="skills"
+      className="flex flex-col items-center p-2 max-w-6xl mx-auto"
+    >
       <h2 className="text-2xl md:text-3xl font-bold mb-8 text-neutral-900 dark:text-white border-b pb-2 border-neutral-200 dark:border-neutral-700">
         {t("skills.title")}
       </h2>
