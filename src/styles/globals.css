@@ -13,9 +13,9 @@ html {
 }
 
 :root[data-theme="light"] {
-  background-color: #ffffff;
-  color: #111111;
-  --nav-bg: #ffffff;
+  background-color: #fbf7f4;
+  color: #322521;
+  --nav-bg: #fbf7f4;
 }
 
 :root[data-theme="dark"] {

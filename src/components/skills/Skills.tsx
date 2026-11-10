@@ -10,7 +10,7 @@ export default function Skills() {
       id="skills"
       className="flex flex-col items-center p-2 max-w-6xl mx-auto"
     >
-      <h2 className="text-2xl md:text-3xl font-bold mb-8 text-neutral-900 dark:text-white border-b pb-2 border-neutral-200 dark:border-neutral-700">
+      <h2 className="text-2xl md:text-3xl font-bold mb-8 border-b pb-2">
         {t("skills.title")}
       </h2>
 
