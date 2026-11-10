@@ -15,7 +15,7 @@ export const SkillsCategory: React.FC<SkillsCategoryProps> = ({ category }) => {
       <h3 className="text-sm md:text-lg font-semibold text-neutral-800 dark:text-neutral-200">
         {t(`skills.categories.${category.translationKey}`)}
       </h3>
-      <div className="p-2 lg:p-5 max-w-[700px] bg-white dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 shadow-sm flex-1">
+      <div className="p-2 lg:p-5 max-w-[700px] bg-white dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 shadow-sm">
         <div className="flex flex-wrap gap-2.5 justify-center md:justify-start">
           {category.skills.map((skill) => (
             <SkillBadge key={skill.id} skill={skill} />
