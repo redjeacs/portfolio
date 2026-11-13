@@ -20,8 +20,8 @@ export const SkillsCategory: React.FC<SkillsCategoryProps> = ({ category }) => {
 
     const badges =
       containerRef.current.querySelectorAll<HTMLElement>("[data-skill-badge]");
-    const repelRadius = 130;
-    const maxPush = 12;
+    const repelRadius = 200;
+    const maxPush = 15;
 
     badges.forEach((badge) => {
       const rect = badge.getBoundingClientRect();
@@ -49,7 +49,7 @@ export const SkillsCategory: React.FC<SkillsCategoryProps> = ({ category }) => {
           rotationY: rotateY,
           transformPerspective: 600,
           duration: 0.15,
-          ease: "power2.out",
+          ease: "none",
           overwrite: "auto",
         });
       } else {
@@ -59,7 +59,7 @@ export const SkillsCategory: React.FC<SkillsCategoryProps> = ({ category }) => {
           rotationX: 0,
           rotationY: 0,
           duration: 0.15,
-          ease: "power2.out",
+          ease: "none",
           overwrite: "auto",
         });
       }
@@ -77,7 +77,7 @@ export const SkillsCategory: React.FC<SkillsCategoryProps> = ({ category }) => {
       rotationX: 0,
       rotationY: 0,
       duration: 0.15,
-      ease: "elastic.out(1, 0.5)",
+      ease: "none",
       overwrite: "auto",
     });
   });
