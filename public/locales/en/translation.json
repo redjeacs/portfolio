@@ -16,7 +16,8 @@
     }
   },
   "about": {
-    "title": "About"
+    "title": "About Me",
+    "content": "filler text for now"
   },
   "skills": {
     "title": "Skills",

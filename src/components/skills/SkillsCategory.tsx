@@ -83,7 +83,7 @@ export const SkillsCategory: React.FC<SkillsCategoryProps> = ({ category }) => {
   });
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col cursor-default">
       <h3 className="text-sm md:text-lg font-semibold">
         {t(`skills.categories.${category.translationKey}`)}
       </h3>

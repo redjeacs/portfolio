@@ -16,7 +16,8 @@
     }
   },
   "about": {
-    "title": "關於我"
+    "title": "關於我",
+    "content": "filler text for now"
   },
   "skills": {
     "title": "專業技能",
