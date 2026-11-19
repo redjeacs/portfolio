@@ -50,30 +50,30 @@ function Navigation() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 w-full flex justify-center gap-4 p-4 transition-transform duration-300 bg-(--nav-bg) ${
+        className={`fixed top-0 left-0 w-full max-w-vw max-h-vh flex justify-center gap-2 md:gap-4 p-4 transition-transform duration-300 bg-(--nav-bg) ${
           isScrolled ? "translate-y-0" : "-translate-y-full"
         }`}
       >
         <button
-          className="cursor-pointer text-xs sm:text-base whitespace-nowrap min-w-0 tracking-wide"
+          className="cursor-pointer text-[20px] sm:text-base whitespace-nowrap min-w-0 tracking-wide"
           onClick={() => scrollToSection("hero")}
         >
           {t("nav.home")}
         </button>
         <button
-          className="cursor-pointer text-xs sm:text-base whitespace-nowrap min-w-0 tracking-wide"
+          className="cursor-pointer text-[20px] sm:text-base whitespace-nowrap min-w-0 tracking-wide"
           onClick={() => scrollToSection("about")}
         >
           {t("nav.about")}
         </button>
         <button
-          className="cursor-pointer text-xs sm:text-base whitespace-nowrap min-w-0 tracking-wide"
+          className="cursor-pointer text-[20px] sm:text-base whitespace-nowrap min-w-0 tracking-wide"
           onClick={() => scrollToSection("skills")}
         >
           {t("nav.skills")}
         </button>
         <button
-          className="cursor-pointer text-xs sm:text-base whitespace-nowrap min-w-0 tracking-wide"
+          className="cursor-pointer text-[20px] sm:text-base whitespace-nowrap min-w-0 tracking-wide"
           onClick={() => scrollToSection("contacts")}
         >
           {t("nav.contacts")}
