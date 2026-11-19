@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence, easeInOut } from "motion/react";
 import { useTranslation } from "react-i18next";
 
 export default function HeroToAbout() {
@@ -25,9 +25,7 @@ export default function HeroToAbout() {
       }}
       className="min-h-screen w-full flex items-center justify-center overflow-hidden px-6 cursor-pointer select-none"
     >
-      <motion.div
-        layout
-        transition={{ duration: MORPH_DURATION, ease: EASE }}
+      <div
         className={`w-full flex items-center justify-center ${
           showAbout ? "max-w-4xl flex-col md:flex-row gap-10" : "flex-col gap-4"
         }`}
@@ -37,14 +35,13 @@ export default function HeroToAbout() {
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
-            // Smoothly transition font size & padding between Hero and About states
-            fontSize: showAbout ? "3.5rem" : "2.25rem", // 56px in About vs 36px in Hero
+            fontSize: showAbout ? "3.5rem" : "2.25rem",
             paddingLeft: showAbout ? "0px" : "24px",
             paddingRight: showAbout ? "0px" : "24px",
             paddingTop: showAbout ? "0px" : "8px",
             paddingBottom: showAbout ? "0px" : "8px",
-            width: showAbout ? "7.5rem" : "auto",
-            height: showAbout ? "7.5rem" : "auto",
+            width: showAbout ? "7.5rem" : "14rem",
+            height: showAbout ? "7.5rem" : "4rem",
           }}
           transition={{ duration: MORPH_DURATION, ease: EASE }}
           className={`shrink-0 rounded-2xl bg-[#C2B5A3] text-[#1E1311] font-['Amatic_SC'] font-extrabold leading-none flex items-center justify-center overflow-hidden ${
@@ -69,7 +66,7 @@ export default function HeroToAbout() {
               width: { duration: MORPH_DURATION * 0.8, ease: EASE },
               opacity: {
                 duration: MORPH_DURATION * 0.4,
-                delay: showAbout ? 0 : MORPH_DURATION * 0.35,
+                delay: showAbout ? 0 : MORPH_DURATION * 0.7,
               },
             }}
             className="inline-block overflow-hidden whitespace-pre"
@@ -95,7 +92,7 @@ export default function HeroToAbout() {
               width: { duration: MORPH_DURATION * 0.8, ease: EASE },
               opacity: {
                 duration: MORPH_DURATION * 0.4,
-                delay: showAbout ? 0 : MORPH_DURATION * 0.35,
+                delay: showAbout ? 0 : MORPH_DURATION * 0.7,
               },
             }}
             className="inline-block overflow-hidden whitespace-nowrap"
@@ -135,7 +132,7 @@ export default function HeroToAbout() {
             </motion.div>
           )}
         </AnimatePresence>
-      </motion.div>
+      </div>
     </div>
   );
 }
