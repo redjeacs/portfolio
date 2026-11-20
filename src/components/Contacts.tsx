@@ -10,7 +10,7 @@ function Contacts() {
         {t("contacts.title")}
       </h2>
       <div className="flex flex-col gap-2 items-center">
-        <p className="flex items-center gap-1 whitespace-nowrap">
+        <p className="flex items-center max-w-full text-[20px] gap-1 whitespace-nowrap">
           <Mail className="shrink-0" />
           <span>jerryc19112235@gmail.com</span>
         </p>

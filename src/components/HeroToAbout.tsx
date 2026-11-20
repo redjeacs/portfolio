@@ -23,7 +23,7 @@ export default function HeroToAbout() {
       onKeyDown={(e) => {
         if (e.key === "Enter" || e.key === " ") toggleView();
       }}
-      className="min-h-screen w-full flex items-center justify-center overflow-hidden px-6 cursor-pointer select-none"
+      className="min-h-screen w-full flex items-center justify-center overflow-hidden px-4 md:px-6 cursor-pointer select-none"
     >
       <div
         className={`w-full flex items-center justify-center ${
@@ -32,25 +32,27 @@ export default function HeroToAbout() {
       >
         <motion.div
           layout
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 0, "--font-scale": 1 } as any}
           animate={{
             opacity: 1,
-            fontSize: showAbout ? "3.5rem" : "2.25rem",
+            "--font-scale": showAbout ? 1.85 : 1,
             paddingLeft: showAbout ? "0px" : "24px",
             paddingRight: showAbout ? "0px" : "24px",
             paddingTop: showAbout ? "0px" : "8px",
             paddingBottom: showAbout ? "0px" : "8px",
-            width: showAbout ? "7.5rem" : "14rem",
-            height: showAbout ? "7.5rem" : "4rem",
+            width: showAbout ? "5.5rem" : "14rem",
+            height: showAbout ? "5.5rem" : "4rem",
+          }}
+          style={{
+            fontSize: "calc(clamp(1rem, 8vw, 1.875rem) * var(--font-scale, 1))",
           }}
           transition={{ duration: MORPH_DURATION, ease: EASE }}
-          className={`shrink-0 rounded-2xl bg-[#C2B5A3] text-[#1E1311] font-['Amatic_SC'] font-extrabold leading-none flex items-center justify-center overflow-hidden ${
+          className={`shrink-0 rounded-2xl max-w-full bg-[#C2B5A3] text-[#1E1311] font-['Amatic_SC'] font-extrabold leading-none flex items-center justify-center overflow-hidden ${
             showAbout ? "shadow-xl tracking-tighter" : "tracking-normal"
           }`}
         >
           {/* Letter J */}
           <motion.span
-            layout="position"
             transition={{ duration: MORPH_DURATION, ease: EASE }}
             className="inline-block"
           >
@@ -76,7 +78,6 @@ export default function HeroToAbout() {
 
           {/* Letter C */}
           <motion.span
-            layout="position"
             transition={{ duration: MORPH_DURATION, ease: EASE }}
             className="inline-block"
           >
