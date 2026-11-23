@@ -52,7 +52,7 @@ function Navigation() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 w-full max-w-vw max-h-vh flex justify-center gap-2 md:gap-4 p-4 transition-transform duration-300 bg-(--nav-bg) ${
+        className={`z-10 fixed top-0 left-0 w-full max-w-vw max-h-vh flex justify-center gap-2 md:gap-4 p-4 transition-transform duration-300 bg-(--nav-bg) ${
           isScrolled ? "translate-y-0" : "-translate-y-full"
         }`}
       >
@@ -76,15 +76,15 @@ function Navigation() {
         </button>
         <button
           className="cursor-pointer text-[20px] sm:text-base whitespace-nowrap min-w-0 tracking-wide"
-          onClick={() => scrollToSection("skills")}
+          onClick={() => scrollToSection("projects")}
         >
-          {t("nav.skills")}
+          {t("nav.projects")}
         </button>
         <button
           className="cursor-pointer text-[20px] sm:text-base whitespace-nowrap min-w-0 tracking-wide"
-          onClick={() => scrollToSection("contacts")}
+          onClick={() => scrollToSection("skills")}
         >
-          {t("nav.contacts")}
+          {t("nav.skills")}
         </button>
       </nav>
       <div
