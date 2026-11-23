@@ -1,16 +1,10 @@
-import { useState, useRef } from "react";
-import { motion, AnimatePresence, easeInOut } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { useTranslation } from "react-i18next";
+import { useView } from "../contexts/ViewContext";
 
 export default function HeroToAbout() {
   const { t } = useTranslation();
-  const [showAbout, setShowAbout] = useState(false);
-  const hasInteracted = useRef(false);
-
-  const toggleView = () => {
-    hasInteracted.current = true;
-    setShowAbout((prev) => !prev);
-  };
+  const { showAbout, toggleView } = useView();
 
   const MORPH_DURATION = 0.85;
   const EASE = [0.22, 1, 0.36, 1] as const;
@@ -18,6 +12,7 @@ export default function HeroToAbout() {
   return (
     <div
       onClick={toggleView}
+      id="heroToAbout"
       role="button"
       tabIndex={0}
       onKeyDown={(e) => {

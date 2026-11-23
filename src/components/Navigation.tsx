@@ -3,11 +3,13 @@ import useThemeStore from "../contexts/useThemeStore";
 import { Sun, Moon } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Dropdown } from "../utils/Dropdown";
+import { useView } from "../contexts/ViewContext";
 
 function Navigation() {
   const { t, i18n } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(true);
   const previousScrollPosition = useRef(0);
+  const { toggleView, showAbout } = useView();
 
   const changeLanguage = (lng: string) => {
     if (i18n && typeof i18n.changeLanguage === "function") {
@@ -56,13 +58,19 @@ function Navigation() {
       >
         <button
           className="cursor-pointer text-[20px] sm:text-base whitespace-nowrap min-w-0 tracking-wide"
-          onClick={() => scrollToSection("hero")}
+          onClick={() => {
+            scrollToSection("heroToAbout");
+            showAbout ? toggleView() : "";
+          }}
         >
           {t("nav.home")}
         </button>
         <button
           className="cursor-pointer text-[20px] sm:text-base whitespace-nowrap min-w-0 tracking-wide"
-          onClick={() => scrollToSection("about")}
+          onClick={() => {
+            scrollToSection("heroToAbout");
+            !showAbout ? toggleView() : "";
+          }}
         >
           {t("nav.about")}
         </button>
