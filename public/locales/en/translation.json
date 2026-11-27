@@ -16,8 +16,8 @@
     }
   },
   "about": {
-    "title": "About Me",
-    "content": "filler text for now"
+    "title": "Jerry Chang,",
+    "content": "full stack developer with a background in social psychology. I excel in designing responsive JavaScript/Typescript apps with React and NodeJS. I enjoy the process of solving complex problems with a keen focus on user experience. I am always curious about the latest tools in tech, spending time developing personal projects to gain hands on experience with new ideas."
   },
   "skills": {
     "title": "Skills",

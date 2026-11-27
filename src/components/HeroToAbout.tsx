@@ -22,7 +22,7 @@ export default function HeroToAbout() {
     >
       <div
         className={`w-full flex items-center justify-center ${
-          showAbout ? "max-w-4xl flex-col md:flex-row gap-10" : "flex-col gap-4"
+          showAbout ? "max-w-4xl flex-col md:flex-row gap-5" : "flex-col gap-4"
         }`}
       >
         <motion.div
@@ -117,12 +117,12 @@ export default function HeroToAbout() {
                 y: 10,
                 transition: { duration: 0.25, ease: "easeIn" },
               }}
-              className="space-y-4 text-center md:text-left"
+              className="space-y-4 text-center md:text-left lg:max-w-1/3"
             >
               <h2 className="text-xl md:text-3xl font-bold mb-4">
                 {t("about.title")}
               </h2>
-              <p className="text-neutral-600 leading-relaxed">
+              <p className="text-[16px] md:text-md opacity-50 text-md leading-relaxed">
                 {t("about.content")}
               </p>
             </motion.div>
