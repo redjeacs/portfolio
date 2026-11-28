@@ -89,8 +89,8 @@ function Navigation() {
       </nav>
       <div
         id="corner-utils"
-        className={`fixed bottom-0 right-0 sm:top-0 sm:bottom-auto flex items-center transition-transform duration-300 
-          ${isScrolled ? "translate-y-0" : "translate-y-full md:-translate-y-full"}`}
+        className={`fixed z-50 bottom-0 right-0 sm:top-0 sm:bottom-auto flex items-center transition-transform duration-300 
+          ${isScrolled ? "" : "translate-y-full md:-translate-y-full"}`}
       >
         {/* Language Picker */}
         <Dropdown isScrolled={isScrolled}>
